@@ -1,0 +1,132 @@
+//文案由豆包ai生成
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine(@"你是凤凰战士，正在潜入敌方基地，目标是盗取 SAS 的机密数据。
+SAS 里有我方卧底，会接应你。
+ 
+你来到基地外墙，前方有一名巡逻守卫。");
+		Console.WriteLine("输入asdf_go继续……");
+		string _asdf_go=Console.ReadLine();
+		if(_asdf_go=="asdf_go")
+		{
+		Console.WriteLine("不要轻信别人");
+		return;
+		}
+		else if(_asdf_go=="I love you")
+		{
+		
+		}
+		else
+		{
+		Console.WriteLine("你不值得信任");
+		return;
+		}
+		Console.WriteLine(@"你成功对上了真正的暗号 I love you。
+面前的守卫瞬间卸下敌意，压低声音对你说：
+ 
+「终于等到自己人了。跟我来，别出声，别回头。」
+ 
+他带着你贴着墙根，绕过巡逻路线，钻进一条狭窄、布满灰尘的通风管道。
+管道另一头，直接通向基地内部的第一层走廊。
+ 
+灯是暗红色的，远处时不时传来士兵的脚步声。
+你现在站在一个三岔路口：");
+		Console.WriteLine("按0继续");
+		string _0=Console.ReadLine();
+		if(_0=="0")
+		{
+		
+		}
+		else
+		{
+		return;
+		}
+		Console.WriteLine(@"你现在站在一个三岔路口：
+ 
+1. 左边：监控室
+里面有两个士兵在看屏幕。只要关掉监控，后面行动会非常安全。
+
+2. 中间：档案室
+门没锁，看起来没人。情报说，SAS 的机密文件很可能就藏在这里。
+
+3. 右边：电梯口
+直通地下核心区，但有重兵把守，风险最高，速度也最快。");
+		int a=int.Parse(Console.ReadLine());
+		switch(a)
+		{
+			case 1 :
+			{
+			Console.WriteLine(@"“监控主机烧毁，屏幕全黑。你决定下一步：
+ 
+
+1. 直接冲向地下核心区
+
+2. 检查主机残留数据
+
+3. 切断整栋建筑电源”");
+				string aa=Console.ReadLine();
+				switch(aa)
+				{
+					case "1":
+					{
+					break;
+					}
+				
+				
+				}
+			break;
+			}
+			
+			
+		    
+			
+			case 2 :
+			{
+			Console.WriteLine(@"“警报大作，士兵蜂拥而至。你的选择：
+ 
+
+1. 反手一枪，杀出重围
+
+2. 躲进储物柜，屏息等待
+
+3. 引爆炸弹，彻底销毁证据”");
+				string aa=Console.ReadLine();
+				switch(aa)
+				{
+				
+				}	
+			break;
+			}
+				
+				
+				
+				
+				
+				
+				
+				
+			case 3 :
+			{
+			Console.WriteLine(@"“电梯口两挺机枪黑洞洞的。你选择：
+
+1. 扔闪光弹，强行冲进去
+
+2. 联系卧底询问内部情况
+
+3. 放弃电梯，改走消防楼梯”");	
+			string aa=Console.ReadLine();
+			switch(aa)
+			{
+			
+			}
+			break;
+			}
+					
+		
+		}
+	}
+}
