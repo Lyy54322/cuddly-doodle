@@ -1,0 +1,210 @@
+using System;
+
+public static class ccc
+{
+    public static bool cc(int c)
+    {
+        if(c >= 18)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
+
+public  class aaa
+{
+
+
+
+    public static int Ff(int fff, int ff, int f,int ffff,int fffff)
+    {
+        return (fff * 365 + (ffff - ff) * 30 + (fffff - f));
+    }
+
+
+
+    public static int aa(int a)
+    {
+        return (2026 - a);
+    }
+
+
+	public static string ssss(int sss)
+	{
+	string[] ss={"鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪"};
+	int s=(sss-1900)%12;
+	if(s<0)
+	{
+	s= s+12;
+	}
+	return(ss[s]);
+	}
+
+
+}
+
+public class Program
+{
+    public static void Main()
+    {
+		Console.WriteLine("欢迎使用");
+		Console.WriteLine("请输入今天的日期");
+		int fffff=int.Parse(Console.ReadLine());
+		Console.WriteLine("请输入现在的月份");
+		int ffff =int.Parse(Console.ReadLine());
+        Console.WriteLine("请输入出生日期");
+        try
+		{
+            int bbb = int.Parse(Console.ReadLine());
+            int a = bbb;
+            int bb = aaa.aa(bbb);
+			string eee;
+			var S=bbb;
+			var SS=aaa.ssss(bbb);
+			if(bb<=18)
+			{
+			eee="才";
+			}
+			else
+			{
+			eee="己经";
+			}
+            Console.WriteLine($@"您{eee}{bb}岁
+			          生肖为{SS}");
+
+            bool c = ccc.cc(bb);
+            if(c)
+            {
+                Console.WriteLine("己成年,一_一");
+            }
+            else
+            {
+                Console.WriteLine("未成年,丅_丅");
+            }
+			Console.WriteLine("请输入您的年龄已续继……");
+			while (true)
+			{
+			int x=int.Parse(Console.ReadLine());
+			if(x==bb)
+			{
+			Console.WriteLine($"{bb}***********************");
+			Console.WriteLine($"*{bb}**********************");
+		    Console.WriteLine($"**{bb}*********************");
+			Console.WriteLine($"***{bb}********************");
+			Console.WriteLine($"****{bb}*******************");
+			Console.WriteLine($"*****{bb}******************");
+			Console.WriteLine($"******{bb}*****************");
+			Console.WriteLine($"*******{bb}****************");
+			Console.WriteLine($"********{bb}***************");
+			Console.WriteLine($"*********{bb}**************");
+			Console.WriteLine($"**********{bb}*************");
+			Console.WriteLine($"***********{bb}************");
+			Console.WriteLine($"************{bb}***********");	
+		    Console.WriteLine($"*************{bb}**********");
+			Console.WriteLine($"**************{bb}*********");
+			break;
+			}
+			else
+			{
+			Console.WriteLine("请您配合   谢谢");
+			}
+			}
+            Console.WriteLine("月");
+            int fff = int.Parse(Console.ReadLine());
+			if(fff<1)
+			{
+			Console.WriteLine("抱歉#0000000fff<1");
+			return;
+			}
+			else
+			{
+			Console.WriteLine("…﹉…");
+			}
+
+
+
+
+			if(fff>=12)
+			{
+			Console.WriteLine("抱歉#a0000000fff>12");
+			return;
+			}
+			else
+			{
+			Console.WriteLine("日");
+			}
+            int ff = int.Parse(Console.ReadLine());
+            int F = aaa.Ff(bb, fff, ff,ffff,fffff);
+            Console.WriteLine($"恭喜您已经活了{F}天,加油！");
+        }
+        catch(Exception)
+        {
+            Console.WriteLine("这是我的问题,不是你的问题         .,(");
+			Console.WriteLine("                                。");
+        }
+        Console.WriteLine("谢谢使用😉");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
