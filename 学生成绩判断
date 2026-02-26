@@ -1,0 +1,165 @@
+using System;
+public class aaaaa
+{
+	public static int aaaa(int AAAAA,int AAAA,int AAA,int AA,int A)
+	{
+		int aaa= (AAAAA+AAAA+AAA+AA+A);
+		int  aa= (aaa/5);
+		return(aa);
+	}
+	public static string bbbb( int A_A)
+	{
+		if(A_A>=90)
+		{
+			return("天_A_才");
+		}
+		else if(A_A>=80)
+		{
+			return("B己经很多了♭");
+		}
+		else if(A_A>=70)
+		{
+			return("C+未来可期");
+		}
+		else
+		{
+			return("分数不忍直视");
+		}
+	}
+}
+public class Program
+{
+	public static void Main()
+	{
+		try
+		{
+			Console.WriteLine(@"  注意我们暂时仅支持输入
+			| →→       →→           整数成绩！
+			|	     		      请𣎴要输入带小数的成绩
+			|	     __	 		       谢谢配合！  ");
+			Console.WriteLine($"输入学生的姓名,谢谢");
+			string    bb    = Console . ReadLine ();
+			Console.WriteLine($"输入学生{bb}语文分数");
+			int AAAAA=int.Parse(Console.ReadLine());
+			Console.WriteLine($"输入学生{bb}数学分数");
+			int  AAAA=int.Parse(Console.ReadLine());
+			Console.WriteLine($"输入学生{bb}外语分数");
+			int   AAA=int.Parse(Console.ReadLine());
+			Console.WriteLine($"输入学生{bb}物理分数");
+			int    AA=int.Parse(Console.ReadLine());
+			Console.WriteLine($"输入学生{bb}化学分数");
+			int     A=int.Parse(Console.ReadLine());
+			int A_A=aaaaa.aaaa(AAAAA,AAAA,AAA,AA,A);
+			Console.WriteLine ($"{bb}平均成绩{A_A}");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+public class aaaaa
+{
+	public static int aaaa(int AAAAA,int AAAA,int AAA,int AA,int A)
+	{
+		int aaa= (AAAAA+AAAA+AAA+AA+A);
+		int  aa= (aaa/5);
+		return(aa);
+	}
+	public static string bbbb( int A_A)
+	{
+		if(A_A>=90)
+		{
+			return("天_A_才");
+		}
+		else if(A_A>=80)
+		{
+			return("B己经很多了♭");
+		}
+		else if(A_A>=70)
+		{
+			return("C+未来可期");
+		}
+		else
+		{
+			return("分数不忍直视");
+		}
+	}
+}
+public class Program
+{
+	public static void Main()
+	{
+		try
+		{
+			Console.WriteLine(@"  注意我们暂时仅支持输入
+			| →→       →→           整数成绩！
+			|	     		      请𣎴要输入带小数的成绩
+			|	     __	 		       谢谢配合！  ");
+			Console.WriteLine($"输入学生的姓名,谢谢");
+			string    bb    = Console . ReadLine ();
+			Console.WriteLine($"输入学生{bb}语文分数");
+			int AAAAA=int.Parse(Console.ReadLine());
+			Console.WriteLine($"输入学生{bb}数学分数");
+			int  AAAA=int.Parse(Console.ReadLine());
+			Console.WriteLine($"输入学生{bb}外语分数");
+			int   AAA=int.Parse(Console.ReadLine());
+			Console.WriteLine($"输入学生{bb}物理分数");
+			int    AA=int.Parse(Console.ReadLine());
+			Console.WriteLine($"输入学生{bb}化学分数");
+			int     A=int.Parse(Console.ReadLine());
+			int A_A=aaaaa.aaaa(AAAAA,AAAA,AAA,AA,A);
+			Console.WriteLine ($"{bb}平均成绩{A_A}");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			string B_B=aaaaa.bbbb(A_A);
+			Console.WriteLine($"{B_B}");
+		}
+		catch
+		{
+		    Console.WriteLine("这是我的问题，不是你的问题……");
+		}
+	}
+}
+
+
+
+
+
+			string B_B=aaaaa.bbbb(A_A);
+			Console.WriteLine($"{B_B}");
+		}
+		catch
+		{
+		    Console.WriteLine("这是我的问题，不是你的问题……");
+		}
+	}
+}
