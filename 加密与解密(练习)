@@ -1,0 +1,65 @@
+using System;
+//傻子加密程序
+public class 加密程序
+{
+	public static string 加密方法(string 原文,int 加密参数)
+	{
+		int x=加密参数;
+		string 密文1="";
+		foreach(char c in 原文)
+		{
+			密文1+=(char)(c+x);
+		}
+		return 密文1;
+	}//第一次加密
+}
+//第二次加密
+public class 二次加密
+{
+	public static string 加密方法(string 二次提交)
+	{
+		string 密文2="";
+		foreach(char c in 二次提交)
+		{
+			密文2+=(char)(c^1314);
+		}
+		return 密文2 ;
+	}
+}
+//傻子解密程序
+public class 解密程序
+{
+	public static string 解密方式(string 密文1,int 解密参数)
+	{
+		string 解密1="";
+		foreach(char c in 密文1)
+		{
+			解密1+=(char)(c-解密参数);
+		}
+		return 解密1 ;
+	}//第一次解密 
+}
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("请输入要加密的值");
+		string 用户输入值=Console.ReadLine();
+		//读取用户输入 并将其赋值在 变量 用户输入值
+		Console.WriteLine("请输入要加密的参数");
+		int xx=int.Parse(Console.ReadLine());
+		string ccc=加密程序.加密方法(用户输入值,xx);
+		//将变量 用户输入值 上传加密程序.加密方法 并将返回值赋值在ccc
+		Console.WriteLine(ccc);
+		//打印字符串变量ccc
+		Console.WriteLine("异域后的结果");
+		string 二次加密结果=二次加密.加密方法(ccc);
+		//将上一次的结果作为二次加密.加密方法的参数 
+		Console.WriteLine(二次加密结果);
+		//打印字符串变量二次加密结果
+		Console.WriteLine("解密后的结果");
+		string X=解密程序.解密方式(ccc,xx);
+		Console.WriteLine(X);
+	}
+}
