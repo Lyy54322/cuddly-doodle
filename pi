@@ -1,0 +1,147 @@
+using System;
+using System.Text;
+
+namespace PiDigitByDigit
+{
+    class Program
+    {
+        static void Main()
+        {
+            // 关键：关闭控制台输出缓冲，实现实时打印
+            Console.OutputEncoding = Encoding.ASCII;
+            var stdout = Console.OpenStandardOutput();
+            stdout.SetLength(0); // 清空缓冲区
+
+            // 先打印 π 的整数部分和小数点（固定）
+            WriteByte(stdout, (byte)'3');
+            WriteByte(stdout, (byte)'.');
+
+            // 高精度计算配置：要算的小数位数（可改大，如 10000）
+            int decimalDigits = 100;
+            CalculatePiDigits(decimalDigits, digit =>
+            {
+                // 回调：算出一个数字位，就打印一个字节
+                WriteByte(stdout, (byte)('0' + digit));
+                stdout.Flush(); // 强制立即输出
+            });
+
+            stdout.Close();
+            Console.WriteLine("\n计算完成！");
+            Console.ReadKey();
+        }
+
+        // 封装：写入单个字节到标准输出
+        static void WriteByte(System.IO.Stream stream, byte b)
+        {
+            stream.WriteByte(b);
+        }
+
+        // 核心：马青公式高精度计算 π 的小数位，逐位回调
+        static void CalculatePiDigits(int digits, Action<int> onDigitCalculated)
+        {
+            int N = digits + 10; // 多算 10 位防止精度丢失
+            uint[] a = new uint[N + 1];
+            uint[] b = new uint[N + 1];
+            uint[] c = new uint[N + 1];
+            uint[] d = new uint[N + 1];
+
+            // 初始化：arctan(1/5) 和 arctan(1/239) 的初始值
+            for (int i = 0; i <= N; i++)
+            {
+                a[i] = 1;
+                b[i] = 5;
+                c[i] = 1;
+                d[i] = 239;
+            }
+
+            // 马青公式：π = 16*arctan(1/5) - 4*arctan(1/239)
+            uint[] pi = Multiply(Arctan(b, N), 16);
+            pi = Subtract(pi, Multiply(Arctan(d, N), 4));
+
+            // 提取小数位，逐位回调
+            for (int i = 1; i <= digits; i++)
+            {
+                onDigitCalculated((int)(pi[i] % 10));
+            }
+        }
+
+        // 辅助：高精度 arctan(1/x) 计算
+        static uint[] Arctan(uint[] x, int N)
+        {
+            uint[] result = new uint[N + 1];
+            uint[] term = new uint[N + 1];
+            Array.Copy(x, term, term.Length);
+            term[0] = 0; // 小数部分开始
+
+            int sign = 1;
+            for (int k = 1; k <= N; k += 2)
+            {
+                uint[] div = Divide(term, k);
+                if (sign > 0) Add(result, div);
+                else Subtract(result, div);
+
+                term = Multiply(term, x);
+                term = Divide(term, x[0] * x[0]); // x²
+                sign = -sign;
+            }
+            return result;
+        }
+
+        // 以下为高精度数组的加减乘除基础实现（简化版，满足逐位输出）
+        static uint[] Add(uint[] a, uint[] b)
+        {
+            uint[] res = (uint[])a.Clone();
+            for (int i = N = res.Length - 1; i >= 0; i--)
+            {
+                res[i] += b[i];
+                if (res[i] >= 10 && i > 0)
+                {
+                    res[i - 1] += 1;
+                    res[i] -= 10;
+                }
+            }
+            return res;
+        }
+
+        static uint[] Subtract(uint[] a, uint[] b)
+        {
+            uint[] res = (uint[])a.Clone();
+            for (int i = N = res.Length - 1; i >= 0; i--)
+            {
+                if (res[i] < b[i])
+                {
+                    res[i - 1] -= 1;
+                    res[i] += 10;
+                }
+                res[i] -= b[i];
+            }
+            return res;
+        }
+
+        static uint[] Multiply(uint[] a, uint n)
+        {
+            uint[] res = (uint[])a.Clone();
+            uint carry = 0;
+            for (int i = N = res.Length - 1; i >= 0; i--)
+            {
+                ulong val = (ulong)res[i] * n + carry;
+                res[i] = (uint)(val % 10);
+                carry = (uint)(val / 10);
+            }
+            return res;
+        }
+
+        static uint[] Divide(uint[] a, uint n)
+        {
+            uint[] res = new uint[a.Length];
+            ulong remainder = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                ulong val = remainder * 10 + a[i];
+                res[i] = (uint)(val / n);
+                remainder = val % n;
+            }
+            return res;
+        }
+    }
+}
